@@ -104,7 +104,7 @@ app.post('/products',creatProductValidation, runValidation, (req,res) =>{
     try {
     const {title , price} = req.body;
      const newProduct= {
-        id: ids(),
+        id:new ids(),
         title: title ,
         price: price ,
     }
