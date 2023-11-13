@@ -78,9 +78,9 @@ app.delete('/products/:id' , productValidation , runValidation ,(req , res )=>{
             sucsess: true,
             payload: filteredProducts, 
         })
-    } catch (error) {
-        res.status(500).send('server error')
-    }
+    }catch (error) {
+        next()
+     }
 })
 
 app.get('/products', (req , res)=>{
@@ -113,12 +113,9 @@ app.post('/products',creatProductValidation, runValidation, (req,res) =>{
         sucsess: true,
         payload: newProduct, 
     })    
-    } catch (error) {
-        res.status(500).send({
-            sucsess: false,
-            message: "server error"
-        })
-    }
+    }catch (error) {
+        next()
+     }
     
     return;
 })
