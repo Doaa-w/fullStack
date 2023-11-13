@@ -30,7 +30,10 @@ const handelDelete = async(id:number)=>{
     await axios.post('http://localhost:8084/products/' , product)
     fetchProducts();
     } 
-   
+    // const updateProduct = async(id )=>{
+    //   const { title ,price }=  await axios.put(`http://localhost:8084/products/${id}`, product)
+    //   setProduct(product)
+    //   } 
   useEffect(()=>{
     fetchProducts();
   },[])
@@ -47,8 +50,16 @@ const handelSubmit =(event: FormEvent )=>{
     title: '',
   price: 0
   })
-
 }
+//   const handelSubmitUpdate =(event: FormEvent )=>{ 
+//   event.preventDefault();
+//   updateProduct({title} , {price});
+//   setProduct({
+//   title: product.title,
+//   price: product.price
+//   })
+
+// }
 
 return(
 <div>
@@ -57,6 +68,11 @@ return(
     <input type='text' value={product.price} name='price' placeholder='enter price ' onChange={handelChange}/><br/>
     <button type='submit'>create</button>
   </form>
+  {/* <form onSubmit={handelSubmitUpdate} className='form'>
+    <input type='text' value={product.title}  placeholder='update title ' onChange={handelChange}/><br/>
+    <input type='text' value={product.price}  placeholder='update price ' onChange={handelChange}/><br/>
+    <button type='submit'>update</button>
+  </form> */}
   <div  className='products'>
     {products.length > 0 && products.map((product:product)=>{
       return (
