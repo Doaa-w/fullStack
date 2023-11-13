@@ -4,17 +4,18 @@ import './App.css'
 import axios from 'axios';
 
 type product ={
-id:number,
+id:string,
 title:string,
 price:number
 }
 
-async function App() {
- const [products , setProducts]=useState([]) 
+ function App() {
+ const [products , setProducts]=useState([]); 
 
-const fetchProducts = async()=>{
+const fetchProducts = async () =>{
 const {data}= await axios.get('http://localhost:8084/products')
 setProducts(data.payload)
+console.log(data)
 } 
 
 const handelDelete = async(id:number)=>{
@@ -29,7 +30,7 @@ const handelDelete = async(id:number)=>{
 return(
 <div>
   <div>
-    {products && products.length > 0 && products.map((product:product)=>{
+    {products.length > 0 && products.map((product:product)=>{
       return (
         <div key={product.id}>
         <h3>{product.title}</h3>
