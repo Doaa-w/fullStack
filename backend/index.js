@@ -11,12 +11,9 @@ let products = [
 {id: '1' , title: 'laptop' , price: 750}, 
 {id: '2' , title: 'smartphone' , price: 699}, 
 {id: '3' , title: 'tablet' , price: 600}, 
-{id: '1' , title: 'laptop' , price: 750}, 
-{id: '2' , title: 'smartphone' , price: 699}, 
-{id: '3' , title: 'tablet' , price: 600}, 
-{id: '1' , title: 'laptop' , price: 750}, 
-{id: '2' , title: 'smartphone' , price: 699}, 
-{id: '3' , title: 'tablet' , price: 600}, 
+{id: '4' , title: 'laptop 2' , price: 750}, 
+{id: '5' , title: 'smartphone 2' , price: 699}, 
+{id: '6' , title: 'tablet 2' , price: 600},
 ]
 
 const PORT = '8084';
