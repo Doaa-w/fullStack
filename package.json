@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "ids": "^1.0.5",
+    "react-axios": "^2.0.6"
+  }
+}
