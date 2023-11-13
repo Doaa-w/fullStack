@@ -30,10 +30,7 @@ const handelDelete = async(id:number)=>{
     await axios.post('http://localhost:8084/products/' , product)
     fetchProducts();
     } 
-    const updateProduct = async(id)=>{
-      await axios.put(`http://localhost:8084/products/${id}`)
-      fetchProducts();
-      } 
+   
   useEffect(()=>{
     fetchProducts();
   },[])
@@ -49,11 +46,6 @@ const handelSubmit =(event: FormEvent )=>{
   setProduct({
     title: '',
   price: 0
-  })
-  updateProduct(product);
-  setProduct({
-    title: product.title,
-  price: product.price
   })
 
 }
